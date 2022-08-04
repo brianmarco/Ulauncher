@@ -52,8 +52,10 @@ class UlauncherDbusService(dbus.service.Object):
         bus_name = dbus.service.BusName(DBUS_SERVICE, bus=dbus.SessionBus())
         super().__init__(bus_name, DBUS_PATH)
 
-    @dbus.service.method(DBUS_SERVICE)
-    def toggle_window(self):
+    @dbus.service.method(DBUS_SERVICE, in_signature='s')
+    def toggle_window(self, query=''):
+        logger.info('Toggling with query: %s', query)
+        self.window.input.set_text(query)
         self.window.toggle_window()
 
 

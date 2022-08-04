@@ -283,8 +283,8 @@ class UlauncherWindow(Gtk.Window, WindowHelper):
         if not self.input.get_text():
             # make sure frequent apps are shown if necessary
             self.show_results([])
-        elif self.settings.get_property('clear-previous-query'):
-            self.input.set_text('')
+        # elif self.settings.get_property('clear-previous-query'):
+        #     self.input.set_text('')
         else:
             self.input.grab_focus()
 
