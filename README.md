@@ -7,7 +7,7 @@ Ulauncher was created in Ukraine 🇺🇦 [Stand with Ukraine](https://www.stopp
 ================================
 
 > **Warning** <br>
-> This is an experimental fork of Ulauncher which adds positions the Ulauncher window using Layer Shell with https://github.com/wmww/gtk-layer-shell
+> This is an experimental fork of Ulauncher (v5) which adds the ability to position the Ulauncher window using Layer Shell with https://github.com/wmww/gtk-layer-shell when Layer Shell is supported. Should fallback to the existing Ulauncher implementation when Layer Shell is not supported.
 
 ================================
 
