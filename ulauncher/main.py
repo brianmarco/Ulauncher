@@ -4,6 +4,7 @@ import signal
 import logging
 from functools import partial
 from threading import Event
+
 # This xinit import must happen before any GUI libraries are initialized.
 # pylint: disable=wrong-import-position,wrong-import-order,ungrouped-imports,unused-import
 import ulauncher.utils.xinit  # noqa: F401
@@ -14,6 +15,16 @@ import gi
 sys.path.append('/usr/lib/python3.8/site-packages')
 
 gi.require_version('Gtk', '3.0')
+
+try:
+    gi.require_version('GtkLayerShell', '0.1')
+except ValueError as e:
+    raise RuntimeError('\n\n' +
+                       'If you haven\'t installed GTK Layer Shell, you need to point Python to the\n' +
+                       'library by setting GI_TYPELIB_PATH and LD_LIBRARY_PATH to <build-dir>/src/.\n' +
+                       'For example you might need to run:\n\n' +
+                       'GI_TYPELIB_PATH=build/src LD_LIBRARY_PATH=build/src python3 ' + ' '.join(sys.argv)) from e
+
 # pylint: disable=wrong-import-position
 from gi.repository import Gtk, GLib
 import dbus

@@ -1,4 +1,5 @@
 # -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
+from ast import Gt
 import os
 import time
 import logging
@@ -11,7 +12,7 @@ gi.require_version('GLib', '2.0')
 gi.require_version('Keybinder', '3.0')
 
 # pylint: disable=wrong-import-position, unused-argument
-from gi.repository import Gtk, Gdk, GLib, Keybinder
+from gi.repository import Gtk, Gdk, GLib, Keybinder, GtkLayerShell
 
 # pylint: disable=unused-import
 # these imports are needed for Gtk to find widget classes
@@ -259,7 +260,14 @@ class UlauncherWindow(Gtk.Window, WindowHelper):
             self.preferences_dialog.show(page=page)
         # destroy command moved into dialog to allow for a help button
 
-    def position_window(self):
+    def position_window_layer_shell(self):
+        GtkLayerShell.init_for_window(self)
+        GtkLayerShell.set_layer(self, GtkLayerShell.Layer.TOP)
+        GtkLayerShell.set_anchor(self, GtkLayerShell.Edge.TOP, 1)
+        GtkLayerShell.set_margin(self, GtkLayerShell.Edge.TOP, 50)
+        GtkLayerShell.set_keyboard_mode(self, GtkLayerShell.KeyboardMode.EXCLUSIVE)
+
+    def position_window_normal(self):
         window_width = self.get_size()[0]
         screen = get_current_screen_geometry()
 
@@ -271,6 +279,13 @@ class UlauncherWindow(Gtk.Window, WindowHelper):
         # Also, add offset x and y, in order to move window to the current screen
         self.move(screen['width'] / 2 - window_width / 2 + screen['x'],
                   screen['height'] / 5 + screen['y'])
+
+    def position_window(self):
+        if GtkLayerShell.is_supported():
+            self.position_window_layer_shell()
+            return
+
+        self.position_window_normal()
 
     def show_window(self):
         # works only when the following methods are called in that exact order

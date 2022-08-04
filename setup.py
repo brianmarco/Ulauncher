@@ -176,7 +176,7 @@ def main():
 
     DistUtilsExtra.auto.setup(
         name='ulauncher',
-        version='%VERSION%',
+        version='99',
         license='GPL-3',
         author='Aleksandr Gornostal',
         author_email='ulauncher.app@gmail.com',
