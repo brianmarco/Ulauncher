@@ -264,7 +264,7 @@ class UlauncherWindow(Gtk.Window, WindowHelper):
         GtkLayerShell.init_for_window(self)
         GtkLayerShell.set_layer(self, GtkLayerShell.Layer.TOP)
         GtkLayerShell.set_anchor(self, GtkLayerShell.Edge.TOP, 1)
-        GtkLayerShell.set_margin(self, GtkLayerShell.Edge.TOP, 50)
+        GtkLayerShell.set_margin(self, GtkLayerShell.Edge.TOP, 400)
         GtkLayerShell.set_keyboard_mode(self, GtkLayerShell.KeyboardMode.EXCLUSIVE)
 
     def position_window_normal(self):
