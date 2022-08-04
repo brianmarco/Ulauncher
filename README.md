@@ -9,7 +9,7 @@ Ulauncher was created in Ukraine 🇺🇦 [Stand with Ukraine](https://www.stopp
 > **Warning** <br>
 > This is an experimental fork of Ulauncher (v5) which adds the ability to position the Ulauncher window using Layer Shell with https://github.com/wmww/gtk-layer-shell when Layer Shell is supported. Should fallback to the existing Ulauncher implementation when Layer Shell is not supported.
 
-================================
+---
 
 Ulauncher is a fast application launcher for Linux. It's is written in Python, using GTK+, and features: App Search (fuzzy matching), Calculator, [Extensions](https://ext.ulauncher.io/), Shortcuts, File browser mode and [Custom Color Themes](https://docs.ulauncher.io/en/latest/themes/themes.html)
 
