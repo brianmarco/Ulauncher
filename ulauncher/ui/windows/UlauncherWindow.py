@@ -302,6 +302,7 @@ class UlauncherWindow(Gtk.Window, WindowHelper):
         #     self.input.set_text('')
         else:
             self.input.grab_focus()
+            self.input.set_position(-1)
 
     def toggle_window(self, key=None):
         if self.is_visible():
