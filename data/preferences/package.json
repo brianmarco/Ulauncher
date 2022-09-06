@@ -21,7 +21,7 @@
     "vue": "^2.6.10",
     "vue-clipboard2": "^0.3.0",
     "vue-router": "^3.0.2",
-    "vuex": "^3.0.1"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
