@@ -1,3 +1,4 @@
 Sphinx
 sphinx_rtd_theme
 watchdog
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
