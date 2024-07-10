@@ -5,3 +5,4 @@ pylint==2.3.1
 mypy==0.971
 mypy_extensions==0.4.3
 flake8==3.7.7
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
