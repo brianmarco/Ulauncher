@@ -17,7 +17,7 @@
     "shelljs": "0.8.4"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0",
+    "bootstrap-vue": "^2.18.0",
     "vue": "^2.6.10",
     "vue-clipboard2": "^0.3.0",
     "vue-router": "^3.0.2",
